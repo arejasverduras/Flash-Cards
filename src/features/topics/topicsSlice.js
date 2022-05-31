@@ -20,7 +20,7 @@ const topicsSlice = createSlice({
 
 //create and export a selector for 'topics'
 export const selectTopics = state => 
-    state.topics;
+    state.topics.topics;
 
 //export action creators
 export const { addTopic } = topicsSlice.actions;
