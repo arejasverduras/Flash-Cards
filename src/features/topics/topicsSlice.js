@@ -6,17 +6,28 @@ const topicsSlice = createSlice({
         topics: {}
     },
     reducers: {
-        addTopic: (state, action) => ({
+        addTopic: (state, action) => 
+     {     state.topics = {
             ...state.topics,
-            [action.payload.id]: {
+            [action.payload.id] : {
                 id: action.payload.id,
                 name: action.payload.name,
                 icon: action.payload.icon,
                 quizIds: []
-            }
-        })
+                }
+            }}
+        // state = {
+        //     ...state.topics,
+        //     [action.payload.id]: {
+        //         id: action.payload.id,
+        //         name: action.payload.name,
+        //         icon: action.payload.icon,
+        //         quizIds: []
+        //     }
+        // }
+
     }
-})
+});
 
 //create and export a selector for 'topics'
 export const selectTopics = state => 
